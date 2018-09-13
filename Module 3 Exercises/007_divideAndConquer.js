@@ -21,21 +21,23 @@ You can search for the value 31, as follows:
 * If at any point you calculate the index of the midpoint and get a fractional number, just round it down ("floor" it).
 */
 
-function binarySearch(array, target) {
+function binarySearch(array, target){
     if (array.length === 0) {
-        return false;
-    } else {
-        let midpoint = Math.floor(array.length / 2);
-        if (array[midpoint] === target) {
-            return true;
-        } else {
-            if (array[midpoint] < target) {
-                return binarySearch(array.slice(midpoint + 1), target);
-            } else if (array[midpoint] > target) {
-                return binarySearch(array.slice(0, midpoint), target);
-            }
-        }
+        return null
+    }
+    let mid = Math.floor(array.length / 2)
+    if (array[mid] === target) {
+        return mid
+    } else if (array[mid] > target){
+        // go left
+        return binarySearch(array.slice(0 , mid), target)
+    } else if (array[mid] < target) {
+        // go right
+        searchRes = binarySearch(array.slice(mid + 1), target)
+        return (searchRes === null) ? null : mid + 1 + searchRes
     }
 }
 
-binarySearch([1, 3, 16, 22, 31, 33, 34],31)
+let answer = binarySearch([1, 3, 16, 22, 31, 33, 34],16);
+
+console.log(answer);

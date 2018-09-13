@@ -46,3 +46,20 @@ function assertPairSwitcher(input, output, testName){
 assertPairSwitcher(test1, 'hcce kuo toh wnietertsni ghtsip orlbmei ,si \'t sniasenyli tnreseitgn!', 'it switches the pairs of characters');
 
 // Finished in 21:22
+
+/*
+function flipEveryNChars(str, n) {
+  //define variable to store the flipped characters sentence
+  //for all the characters from start to n, non inclusive
+    //define variable to store a segment of the string
+    //set flipped var = to itself plus the reverse of that segment
+  //return the flipped sentence var
+
+  var flippedString = "";
+  for (var i = 0; i < str.length; i += n) {
+    var stringOfNChars = str.slice(i, i + n);
+    flippedString += stringOfNChars.split('').reverse().join('');
+  }
+  return flippedString;
+}
+ */

@@ -22,3 +22,15 @@ function isStringRotated(str1, str2){
 let answer = isStringRotated(string1, string2);
 
 console.log(answer);
+
+/*
+function isRotated(str1, str2) {
+  var str = str1 + str1;
+
+  if (str.indexOf(str2) !== -1) {
+    return true;
+  }
+
+  return false;
+}
+*/
